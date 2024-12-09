@@ -1,0 +1,153 @@
+$--color-primary: teal;
+$--color-success: #0fd2be;
+$--color-info: #909399;
+$--color-warning: #ff6600;
+$--color-error: #ff274b;
+
+html {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  font-family: "微软雅黑" !important;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+/**
+* 修复 dialog双对话框打开 body元素会有个padding-right样式，造成页面横向挤压
+*/
+.el-popup-parent--hidden {
+  padding-right: 0 !important;
+}
+
+.common__wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+  overflow: visible;
+
+  .pagination {
+    transform: translate(0, 35px);
+    border-radius: 4px;
+  }
+
+  .common-main__header {
+    position: absolute;
+    height: 52px;
+    width: 100%;
+    top: 0px;
+    right: 34px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1;
+  }
+
+  .common-main__main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 16px;
+    padding-right: 32px;
+    overflow: auto;
+  }
+}
+
+.toolbar {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  // background-color: #edf4ff;
+  flex: 0 1 auto;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+  border-radius: 4px 4px 0 0;
+}
+
+.task-detail__wrapper {
+  width: 380px;
+  margin-right: 19px;
+}
+
+.title__wrapper {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #f4f7fe;
+
+  &:first-child {
+    padding-left: 11px;
+    font-family: SourceHanSansSC-Regular;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #3569e7;
+  }
+}
+
+//定义一个支持公共card-list自适应的todo-list 默认宽度为340 请自行覆盖宽度
+.yq-card-list__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+.yq-card-list__item {
+  width: 320px;
+  margin: 0 auto;
+}
+
+.x-padding-50px {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.ml16{
+  margin-left: 16px;
+  width: calc(100% - 16px) !important;
+}
+
+// 类prepend形式的select
+.like-prepend-left {
+  .el-input.is-focus .el-input__inner {
+    border: none;
+  }
+}
+
+.el-link+.el-link,
+.el-link+.el-dropdown {
+  margin-left: 5px;
+
+}
+
+.el-dropdown .menu-arrow {
+  transition: all .2s linear;
+
+  &.is-active {
+    transform: rotate(180deg);
+  }
+}
+
+.ellipsis-span {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+%no-warp {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
